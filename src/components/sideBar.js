@@ -13,7 +13,7 @@ export default function SideBar() {
   };
 
   return (
-    <div className={`flex h-screen`}>
+    <div className={`flex min-h-screen`}>
       <div 
         className={`transition-all duration-300 ease-in-out ${isExpanded ? 'w-52 shadow-lg' : 'w-14'} bg-primary-light text-white`}
       >
@@ -25,7 +25,7 @@ export default function SideBar() {
             <CardOptionSidebar urlLink="/tournaments" title="Torneios" isExpanded={isExpanded} icon={<Trophy />} />
             {user && (
               <>
-                <hr className={`transition-all duration-300 ease-in-out ml-2 my-2 border-secondary-light ${isExpanded ? 'w-[90%]' : 'w-[70%]'} ` }/>
+                <hr className={`transition-all duration-300 ease-in-out ml-2 my-2 border-secondary-light ${isExpanded ? 'w-[90%]' : 'w-[70%]'}`} />
                 <CardOptionSidebar urlLink={`/team/user/${user.id}`} title="Meus times" isExpanded={isExpanded} icon={<ShieldHalf />} />
                 <CardOptionSidebar urlLink={`/tournaments/user/${user.id}`} title="Meus torneios" isExpanded={isExpanded} icon={<Crown />} />
               </>
@@ -42,5 +42,6 @@ export default function SideBar() {
         </div>
       </div>
     </div>
+    
   );
 }

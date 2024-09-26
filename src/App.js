@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -14,12 +14,15 @@ function App() {
       <Router>
         <div className="flex h-screen">
           <SideBar />
+          {/* Flex-1 para ocupar o espaço restante */}
           <div className="flex-1 flex flex-col">
+            {/* Header sempre no topo */}
             <Header />
-            <div className="flex-1">
+            {/* Conteúdo flexível para ocupar o restante */}
+            <div className="flex-1 overflow-auto">
               <Routes>
-                <Route path='/' element={<HomePage />}/>
-                <Route path='/teams' element={<TeamPage />}/>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/teams' element={<TeamPage />} />
               </Routes>
             </div>
             <ToastContainer theme="dark" />
@@ -29,6 +32,5 @@ function App() {
     </AuthProvider>
   );
 }
-
 
 export default App;

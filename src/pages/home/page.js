@@ -1,6 +1,8 @@
 import React from 'react'
-import BentoGrid from '../../components/bento/bentoGrid';
+
 import CardBackgroundPage from '../../components/card/cardBackgroundPage';
+import GridItems from '../../components/bento/GridItems';
+import BentoGridItems from '../../components/bento/BentoGridItems';
 
 export default function HomePage() {
     const items = [
@@ -54,12 +56,14 @@ export default function HomePage() {
     <div>
       <div>
         <CardBackgroundPage>
-          <h1>Tetse</h1>
+            <BentoGridItems>
+              
+            </BentoGridItems>
         </CardBackgroundPage> 
       </div>
       <div>
         <CardBackgroundPage>
-          <BentoGrid items={items}/>
+          <GridItems items={items}/>
         </CardBackgroundPage> 
       </div>
     </div>
