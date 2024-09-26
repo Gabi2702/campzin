@@ -55,7 +55,7 @@ class SupabaseService {
     const { data, error } = await supabase
       .from(this.tableName)
       .select(query)
-      .eq(...filter);  // Usando desestruturação para aplicar filtro
+      .eq(...filter);  
 
     if (error) {
       ToastError("Error:", error.message);
