@@ -2,99 +2,26 @@ import React from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage'
 import GridItems from '../../components/bento/GridItems'
 import FilterTournamentsByGame from '../../components/filter/filterTournamentsByGame';
+import CardTournaments from '../../components/card/cardTournaments';
 
 export default function TournamentsPage() {
   const items = [
     {
-      image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-      title: 'Título 1',
-      text: 'Texto descritivo para o cartão 1.',
+      id: "12345",
+      name: "Torneio de Verão",
+      image: "https://sm.ign.com/ign_br/screenshot/default/image1_z8je.jpg",
+      dateInit: "2024-09-28",
+      dateEnd: "2024-10-05",
+      game: "Rainbow six",
+      plataform: "PC",
+      typeTournament: "Eliminatória",
+      prizePool: "$5000",
+      inscription: "$10",
+      inscripted: 50,
+      limitParticipants: 100,
+      creator: "Organização ABC"
     },
-    {
-      image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-      title: 'Título 2',
-      text: 'Texto descritivo para o cartão 2.',
-    },
-    {
-      image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-      title: 'Título 3',
-      text: 'Texto descritivo para o cartão 3.',
-    },
-    {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 1',
-        text: 'Texto descritivo para o cartão 1.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 2',
-        text: 'Texto descritivo para o cartão 2.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 3',
-        text: 'Texto descritivo para o cartão 3.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 1',
-        text: 'Texto descritivo para o cartão 1.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 2',
-        text: 'Texto descritivo para o cartão 2.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 3',
-        text: 'Texto descritivo para o cartão 3.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 1',
-        text: 'Texto descritivo para o cartão 1.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 2',
-        text: 'Texto descritivo para o cartão 2.',
-      },
-      {
-        image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-        title: 'Título 3',
-        text: 'Texto descritivo para o cartão 3.',
-      },
-      {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 1',
-          text: 'Texto descritivo para o cartão 1.',
-        },
-        {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 2',
-          text: 'Texto descritivo para o cartão 2.',
-        },
-        {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 3',
-          text: 'Texto descritivo para o cartão 3.',
-        },
-        {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 1',
-          text: 'Texto descritivo para o cartão 1.',
-        },
-        {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 2',
-          text: 'Texto descritivo para o cartão 2.',
-        },
-        {
-          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
-          title: 'Título 3',
-          text: 'Texto descritivo para o cartão 3.',
-        },
+    
   ];
   return (
     <>
@@ -102,7 +29,11 @@ export default function TournamentsPage() {
         <FilterTournamentsByGame />
       </CardBackgroundPage>
       <CardBackgroundPage>
-          <GridItems items={items}/>
+          <GridItems>
+          {items.map((item, index) => (
+            <CardTournaments key={index} InfoTournament={item}/>
+          ))}
+          </GridItems>
       </CardBackgroundPage> 
     </>
     

@@ -13,7 +13,7 @@ export default function CardGames({ InfoGames}) {
             alt={`Image ${index + 1}`}
             className="w-full h-[90%] object-cover mb-2 rounded-md"
           />
-          <p className='font-bold'>{InfoGames[index].title}</p>
+          <p className='font-bold text-sm text-center text-white'>{InfoGames[index].title}</p>
         </CardWithLink>
       ))}
     </div>
