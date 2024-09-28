@@ -7,7 +7,8 @@ export default function CardItems({ image, title, text }) {
   return (
     <Card className={"w-[100%] p-2"}>
         <div className="flex w-full p-2">
-          <img src={image} alt={title} className="w-[25%] h-[8%] object-cover rounded-md " />
+          <img src={image} alt={title} className="w-[150px] h-[100px] object-cover rounded-md"/>
+
           <div className="ml-4">
             <p className="font-semibold text-sm">Data inicio - Data Fim</p>
             <h1 className="mt-4 font-semibold text-white">Torneio dos frentistas</h1>

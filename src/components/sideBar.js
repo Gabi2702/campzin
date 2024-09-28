@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import CardOptionSidebar from './card/cardOptionSidebar';
-import { Expand, Minimize, LayoutDashboard, UsersRound, Trophy, Crown, ShieldHalf } from 'lucide-react';
+import { Expand, Minimize, LayoutDashboard, UsersRound, Trophy, Crown, ShieldHalf, Gamepad2 } from 'lucide-react';
 import Logo from './logo';
 import { AuthContext } from '../context/auth';
 
@@ -20,7 +20,7 @@ export default function SideBar() {
         <Logo isExpanded={isExpanded} />
         <nav className="">
           <ul>
-            <CardOptionSidebar urlLink="/dashboard" title="Dashboard" isExpanded={isExpanded} icon={<LayoutDashboard />} />
+          <CardOptionSidebar urlLink="/games" title="Jogos" isExpanded={isExpanded} icon={<Gamepad2 />} />
             <CardOptionSidebar urlLink="/teams" title="Times" isExpanded={isExpanded} icon={<UsersRound />} />
             <CardOptionSidebar urlLink="/tournaments" title="Torneios" isExpanded={isExpanded} icon={<Trophy />} />
             {user && (
@@ -28,6 +28,7 @@ export default function SideBar() {
                 <hr className={`transition-all duration-300 ease-in-out ml-2 my-2 border-secondary-light ${isExpanded ? 'w-[90%]' : 'w-[70%]'}`} />
                 <CardOptionSidebar urlLink={`/team/user/${user.id}`} title="Meus times" isExpanded={isExpanded} icon={<ShieldHalf />} />
                 <CardOptionSidebar urlLink={`/tournaments/user/${user.id}`} title="Meus torneios" isExpanded={isExpanded} icon={<Crown />} />
+                <CardOptionSidebar urlLink={`/dashboard/user/${user.id}`} title="Dashboard" isExpanded={isExpanded} icon={<LayoutDashboard />} />
               </>
             )}
           </ul>

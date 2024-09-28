@@ -7,6 +7,8 @@ import { AuthProvider } from './context/auth';
 import SideBar from './components/sideBar';
 import HomePage from './pages/home/page';
 import TeamPage from './pages/team/page';
+import TournamentsPage from './pages/tournaments/page';
+import GamesPage from './pages/games/page';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
               <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/teams' element={<TeamPage />} />
+                <Route path='/tournaments' element={<TournamentsPage />} />
+                <Route path='/games' element={<GamesPage />} />
               </Routes>
             </div>
             <ToastContainer theme="dark" />

@@ -7,47 +7,47 @@ import BentoGridItems from '../../components/bento/BentoGridItems';
 export default function HomePage() {
     const items = [
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
           title: 'Título 1',
           text: 'Texto descritivo para o cartão 1.',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
           title: 'Título 2',
           text: 'Texto descritivo para o cartão 2.',
         },
         {
-          image: 'https://via.placeholder.com/150',
+          image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
           title: 'Título 3',
           text: 'Texto descritivo para o cartão 3.',
         },
         {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 1',
             text: 'Texto descritivo para o cartão 1.',
           },
           {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 2',
             text: 'Texto descritivo para o cartão 2.',
           },
           {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 3',
             text: 'Texto descritivo para o cartão 3.',
           },
           {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 1',
             text: 'Texto descritivo para o cartão 1.',
           },
           {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 2',
             text: 'Texto descritivo para o cartão 2.',
           },
           {
-            image: 'https://via.placeholder.com/150',
+            image: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ec1f32ae-96d0-11e6-8d3e-00163ec9f5fa/1724672472/rainbow-six-siege-screenshot.jpg',
             title: 'Título 3',
             text: 'Texto descritivo para o cartão 3.',
           },
