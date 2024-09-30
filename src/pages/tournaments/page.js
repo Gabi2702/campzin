@@ -1,41 +1,48 @@
-import {React, useState,useEffect} from 'react'
+import { React, useState, useEffect } from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage'
 import GridItems from '../../components/bento/GridItems'
 import FilterTournamentsByGame from '../../components/filter/filterTournamentsByGame';
 import CardTournaments from '../../components/card/cardTournaments';
 import TournamentService from '../../services/tournament/index.js'
+import Loading from '../../components/loading/page.js';
+
 
 export default function TournamentsPage() {
-  const tournamentsSerivce = new TournamentService()
+  const tournamentsService = new TournamentService()
   const [tournaments, setTournaments] = useState([])
+  const [loading, setLoading] = useState(true) // Estado para o carregamento
 
-  async function fetchAll(){
+  async function fetchAll() {
     try {
-      setTournaments(await tournamentsSerivce.selectAll())
-      
-    } catch (error){
-      console.log(error);
+      const data = await tournamentsService.selectAll()
+      setTournaments(data)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false) 
     }
   }
 
   useEffect(() => {
     fetchAll()
-  },[])
-  
-  console.log(tournaments)
+  }, [])
+
+  if (loading) {
+    return <Loading /> 
+  }
+
   return (
     <>
       <CardBackgroundPage>
         <FilterTournamentsByGame />
       </CardBackgroundPage>
       <CardBackgroundPage>
-          <GridItems>
+        <GridItems>
           {tournaments.map((tournament, index) => (
-            <CardTournaments key={index} InfoTournament={tournament}/>
+            <CardTournaments key={index} InfoTournament={tournament} />
           ))}
-          </GridItems>
+        </GridItems>
       </CardBackgroundPage> 
     </>
-    
   )
 }
