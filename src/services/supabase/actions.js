@@ -51,7 +51,20 @@ class SupabaseService {
     return true;
   }
 
-  async select(query, filter) {
+  async selectAll(query) {
+    const { data, error } = await supabase
+      .from(this.tableName)
+      .select(query)  
+
+    if (error) {
+      console.log(error)
+      ToastError("Error:", error.message);
+      return null;
+    }
+    return data;
+  }
+
+  async selectSpecify(query, filter) {
     const { data, error } = await supabase
       .from(this.tableName)
       .select(query)
@@ -61,9 +74,9 @@ class SupabaseService {
       ToastError("Error:", error.message);
       return null;
     }
-
     return data;
   }
+
 }
 
 export default SupabaseService;

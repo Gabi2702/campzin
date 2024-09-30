@@ -1,28 +1,28 @@
-import React from 'react'
+import {React, useState,useEffect} from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage'
 import GridItems from '../../components/bento/GridItems'
 import FilterTournamentsByGame from '../../components/filter/filterTournamentsByGame';
 import CardTournaments from '../../components/card/cardTournaments';
+import TournamentService from '../../services/tournament/index.js'
 
 export default function TournamentsPage() {
-  const items = [
-    {
-      id: "12345",
-      name: "Torneio de Verão",
-      image: "https://sm.ign.com/ign_br/screenshot/default/image1_z8je.jpg",
-      dateInit: "2024-09-28",
-      dateEnd: "2024-10-05",
-      game: "Rainbow six",
-      plataform: "PC",
-      typeTournament: "Eliminatória",
-      prizePool: "$5000",
-      inscription: "$10",
-      inscripted: 50,
-      limitParticipants: 100,
-      creator: "Organização ABC"
-    },
-    
-  ];
+  const tournamentsSerivce = new TournamentService()
+  const [tournaments, setTournaments] = useState([])
+
+  async function fetchAll(){
+    try {
+      setTournaments(await tournamentsSerivce.selectAll())
+      
+    } catch (error){
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchAll()
+  },[])
+  
+  console.log(tournaments)
   return (
     <>
       <CardBackgroundPage>
@@ -30,8 +30,8 @@ export default function TournamentsPage() {
       </CardBackgroundPage>
       <CardBackgroundPage>
           <GridItems>
-          {items.map((item, index) => (
-            <CardTournaments key={index} InfoTournament={item}/>
+          {tournaments.map((tournament, index) => (
+            <CardTournaments key={index} InfoTournament={tournament}/>
           ))}
           </GridItems>
       </CardBackgroundPage> 

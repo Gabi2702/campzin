@@ -3,6 +3,7 @@ import React from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage';
 import GridItems from '../../components/bento/GridItems';
 import BentoGridItems from '../../components/bento/BentoGridItems';
+import TournamentsPage from '../tournaments/page';
 
 export default function HomePage() {
     const items = [
@@ -33,9 +34,7 @@ export default function HomePage() {
         </CardBackgroundPage> 
       </div>
       <div>
-        <CardBackgroundPage>
-          <GridItems items={items}/>
-        </CardBackgroundPage> 
+        <TournamentsPage/>
       </div>
     </div>
        

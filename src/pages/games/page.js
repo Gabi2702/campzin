@@ -1,6 +1,5 @@
 import React from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage'
-import BentoGridItems from '../../components/bento/BentoGridItems'
 import CardGames from '../../components/card/cardGames'
 
 export default function GamesPage() {

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import { AuthContext } from '../context/auth';
 
-const ProtectedRoute = ({ children }) => {
-    const token = Cookies.get('token');  // Verifica o token do cookie
+function ProtectedRoute({ element }) {
+  const { user } = useContext(AuthContext);
 
-    if (!token) {
-        return <Navigate to="/login" />;  // Redireciona para login se não houver token
-    }
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
 
-    return children;  // Renderiza o conteúdo protegido
-};
+  return element;
+}
 
 export default ProtectedRoute;
