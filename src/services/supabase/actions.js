@@ -57,7 +57,6 @@ class SupabaseService {
       .select(query)  
 
     if (error) {
-      console.log(error)
       ToastError("Error:", error.message);
       return null;
     }
@@ -68,8 +67,7 @@ class SupabaseService {
     const { data, error } = await supabase
       .from(this.tableName)
       .select(query)
-      .eq(...filter);  
-
+      .eq(filter[0],filter[1]);  
     if (error) {
       ToastError("Error:", error.message);
       return null;

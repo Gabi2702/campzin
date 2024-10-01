@@ -11,6 +11,7 @@ import TournamentsPage from './pages/tournaments/page';
 import GamesPage from './pages/games/page';
 import ProtectedRoute from './context/protectedRoute';
 import DashboardUser from './pages/dashboard/page';
+import TournamentByIdPage from './pages/tournaments/id/page';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/teams' element={<TeamPage />} />
                 <Route path='/tournaments' element={<TournamentsPage />} />
+                <Route path='/tournaments/:id' element={<TournamentByIdPage />} />
+                <Route path='/tournaments/game/:game' element={<TournamentsPage />} />
                 <Route path='/games' element={<GamesPage />} />
                 <Route path='/dashboard/user/:id' element={<ProtectedRoute element={<DashboardUser />} />} />
                 <Route path='/tournaments/user/:id' element={<ProtectedRoute element={<GamesPage />} />} />

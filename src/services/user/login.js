@@ -5,15 +5,16 @@ import Cookies from 'js-cookie';
 
 export async function UserLogin( loginData ){
     try {
-        const data = await supabase.auth.signInWithPassword(loginData);
-        if(data.error != null && data.error.status === 400){
+        const {data,error} = await supabase.auth.signInWithPassword(loginData);
+        if(error != null && error.status === 400){
             ToastError("Usuário ou senha incorretos!")
-            return
+            return data
         }
         setCookiesUser(data.data.session)
         ToastSucess("Usuario logado!")
     } catch (error) {
-        console.log(error)
+        ToastError(error)
+        throw new Error("Login falhou");
     } 
    
 }

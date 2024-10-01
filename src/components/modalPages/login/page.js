@@ -24,7 +24,7 @@ export default function LoginButton() {
 
   return (
     <div>
-      <Modal handleSubmit={handleLogin} onClose={resetForm} buttonTitle={"Login"}>
+      <Modal handleSubmit={handleLogin} onClose={resetForm} buttonTitle={"Login"} Title={"Login"}>
         <FormLogin formData={Login} setFormData={setLogin} />
       </Modal>
     </div>

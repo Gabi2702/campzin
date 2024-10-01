@@ -2,7 +2,7 @@ import React from 'react'
 import ModalCard from './modalCard';
 import { useState } from 'react';
 
-export default function Modal({ buttonTitle, handleSubmit, children, onClose, openByTable }) {
+export default function Modal({ buttonTitle, handleSubmit, children, onClose, openByTable, Title}) {
     const [isModalOpen, setIsModalOpen] = useState(openByTable || false);
 
     const handleOpenModal = () => {
@@ -33,7 +33,7 @@ export default function Modal({ buttonTitle, handleSubmit, children, onClose, op
             <ModalCard
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
-                title="Editar Dados"
+                title={Title}
                 onSubmit={handleSave}
             >
                {children}

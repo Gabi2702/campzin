@@ -7,7 +7,7 @@ import Loading from '../../components/loading/page'
 export default function GamesPage() {
   const gameService = new GameService()
   const [games, setGames] = useState(null)
-  const [loading, setLoading] = useState(true) // Estado para controlar o carregamento
+  const [loading, setLoading] = useState(true)
 
   async function fetchGames() {
     try {
@@ -16,7 +16,7 @@ export default function GamesPage() {
     } catch (error) {
       console.error('Error fetching games:', error)
     } finally {
-      setLoading(false) // Termina o loading
+      setLoading(false) 
     }
   }
 
