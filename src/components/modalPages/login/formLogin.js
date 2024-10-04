@@ -14,8 +14,8 @@ export default function FormLogin({formData, setFormData}) {
         <Input
         type={"password"}
         id="password"
-        label="Password"
-        placeholder="Digite seu endereço"
+        label="Senha"
+        placeholder="Digite sua senha"
         formData={formData}
         setFormData={setFormData}
         />

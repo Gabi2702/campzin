@@ -1,6 +1,7 @@
 import React from 'react'
 import ModalCard from './modalCard';
 import { useState } from 'react';
+import ButtonClick from '../button/buttonClick';
 
 export default function Modal({ buttonTitle, handleSubmit, children, onClose, openByTable, Title}) {
     const [isModalOpen, setIsModalOpen] = useState(openByTable || false);
@@ -26,9 +27,7 @@ export default function Modal({ buttonTitle, handleSubmit, children, onClose, op
   return (
       <>
             {!openByTable && (
-                <button onClick={handleOpenModal} className="bg-secondary-light text-white px-4 py-1 rounded">
-                    {buttonTitle || "Editar"}
-                </button>
+                <ButtonClick onClick={handleOpenModal} Title={buttonTitle || "Editar"} className="bg-secondary-light text-white px-4 py-1 rounded" />
             )}
             <ModalCard
                 isOpen={isModalOpen}

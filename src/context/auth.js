@@ -11,30 +11,28 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // Estado para armazenar o usuário
   const [loading, setLoading] = useState(true); // Estado de carregamento
+  const [sessionProvider,setSessionProvider] = useState(null);
 
   const fetchUserData = async () => {
-    const token = Cookies.get('token'); // Obtém o token do cookie
-    if (token) {
-      const { data, error } = await supabase.auth.getUser(token);
-      if (!error) {
-        setUser(data.user); // Define o estado do usuário
-      } else {
-        setUser(null); // Caso haja erro, reseta o estado
-      }
+    const { data, error } = await supabase.auth.getUser();
+    if (!error) {
+      setUser(data.user);
+      ToastSucess("Logado com sucesso!") 
+    } else {
+      setUser(null); 
     }
-    setLoading(false); // Finaliza o carregamento
+    setLoading(false); 
   };
 
   useEffect(() => {
     fetchUserData();
   }, []);
 
-  const logoutUser = () => {
-    Cookies.remove('token'); 
-    setUser(null); 
+  const logoutUser = async () => {
+    await supabase.auth.signOut()
+    setUser(null)
   };
 
-  // Função de login
   const loginUser = async (loginData) => {
     const { data, error } = await supabase.auth.signInWithPassword(loginData);
     if (error) {
@@ -43,15 +41,32 @@ export const AuthProvider = ({ children }) => {
     }
     Cookies.set('token', data.session.access_token, { expires: new Date(data.session.expires_at * 1000) });
     setUser(data.user); 
-    ToastSucess("Logado com sucesso!")
   };
 
+  const signUpUser = async (signUpUser) =>{
+    const {data,error} = await supabase.auth.signUp(signUpUser);
+    if (error) {
+      ToastError("Usuário ou senha incorretos")
+      throw new Error("Login falhou");
+    }
+    await loginUser(signUpUser)
+  }
+
+  const signUpUserWithProvider = async (signUpUserProvider) =>{
+    const {data,error} = await supabase.auth.signInWithOAuth(signUpUserProvider);
+    if (error) {
+      ToastError("Usuário ou senha incorretos")
+      throw new Error("Login falhou");
+    }
+  }
 
   const value = {
     user,
     loading,
     loginUser,
     logoutUser,
+    signUpUser,
+    signUpUserWithProvider
   };
 
   return (
