@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 
 import CardWithLink from './cardWithLink';
 
 export default function CardGames({ InfoGames, size = "lg" }) {
-  
+
   const types = {
     "lg" : {
       container: "grid grid-cols-5 gap-4 p-4",
       card_link : "w-[300px] h-[300px] hover:cursor-pointer",
-      img_size : "w-full h-[90%] p-2 object-cover rounded-2xl",
+      img_size : "w-full h-[90%] p-2 object-cover rounded-2xl transition-transform duration-300 ease-in-out transform hover:scale-105", // Adicionado efeito de hover
       text_game_name : true
     },
     "sm" : {
       container: "flex flex-row gap-2 ",
-      card_link : "w-18 h-18  hover:cursor-pointer -mt-4",
-      img_size : "w-[80px] h-[80px] object-cover rounded-md",
+      card_link : "w-18 h-18 hover:cursor-pointer -mt-4",
+      img_size : "w-[80px] h-[80px] object-cover rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105", // Adicionado efeito de hover
       text_game_name : false
     }
   }
