@@ -9,15 +9,13 @@ import ToastSucess from '../components/toast/toastSucess';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Estado para armazenar o usuário
-  const [loading, setLoading] = useState(true); // Estado de carregamento
-  const [sessionProvider,setSessionProvider] = useState(null);
+  const [user, setUser] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
   const fetchUserData = async () => {
     const { data, error } = await supabase.auth.getUser();
     if (!error) {
       setUser(data.user);
-      ToastSucess("Logado com sucesso!") 
     } else {
       setUser(null); 
     }
@@ -52,12 +50,13 @@ export const AuthProvider = ({ children }) => {
     await loginUser(signUpUser)
   }
 
-  const signUpUserWithProvider = async (signUpUserProvider) =>{
+  const signUpUserWithProvider = async (signUpUserProvider) => {
     const {data,error} = await supabase.auth.signInWithOAuth(signUpUserProvider);
     if (error) {
       ToastError("Usuário ou senha incorretos")
       throw new Error("Login falhou");
     }
+    // ToastSucess("Logado com sucesso!") 
   }
 
   const value = {

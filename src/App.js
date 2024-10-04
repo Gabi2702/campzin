@@ -29,9 +29,9 @@ function App() {
                 <Route path='/tournaments/:id' element={<TournamentByIdPage />} />
                 <Route path='/tournaments/game/:game' element={<TournamentsPage />} />
                 <Route path='/games' element={<GamesPage />} />
-                <Route path='/dashboard/user/:id' element={<ProtectedRoute element={<DashboardUser />} />} />
-                <Route path='/tournaments/user/:id' element={<ProtectedRoute element={<GamesPage />} />} />
-                <Route path='/teams/user/:id' element={<ProtectedRoute element={<GamesPage />} />} />
+                <Route path='/dashboard/user' element={<ProtectedRoute element={<DashboardUser />} />} />
+                <Route path='/tournaments/user' element={<ProtectedRoute element={<GamesPage />} />} />
+                <Route path='/teams/user' element={<ProtectedRoute element={<GamesPage />} />} />
               </Routes>
             </div>
             <ToastContainer theme="dark" />

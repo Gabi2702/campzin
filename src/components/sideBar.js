@@ -26,9 +26,9 @@ export default function SideBar() {
             {user && (
               <>
                 <hr className={`transition-all duration-300 ease-in-out ml-2 my-2 border-secondary-light ${isExpanded ? 'w-[90%]' : 'w-[70%]'}`} />
-                <CardOptionSidebar urlLink={`/teams/user/${user.id}`} title="Meus times" isExpanded={isExpanded} icon={<ShieldHalf />} />
-                <CardOptionSidebar urlLink={`/tournaments/user/${user.id}`} title="Meus torneios" isExpanded={isExpanded} icon={<Crown />} />
-                <CardOptionSidebar urlLink={`/dashboard/user/${user.id}`} title="Dashboard" isExpanded={isExpanded} icon={<LayoutDashboard />} />
+                <CardOptionSidebar urlLink={'/teams/user'} title="Meus times" isExpanded={isExpanded} icon={<ShieldHalf />} />
+                <CardOptionSidebar urlLink={'/tournaments/user'} title="Meus torneios" isExpanded={isExpanded} icon={<Crown />} />
+                <CardOptionSidebar urlLink={'/dashboard/user'} title="Dashboard" isExpanded={isExpanded} icon={<LayoutDashboard />} />
               </>
             )}
           </ul>

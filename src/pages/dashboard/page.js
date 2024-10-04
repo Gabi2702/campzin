@@ -1,12 +1,12 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext } from 'react'
 import CardBackgroundPage from '../../components/card/cardBackgroundPage'
+import { AuthContext } from '../../context/auth'
 
 export default function DashboardUser() {
-    const { id } = useParams()
+    const { user } = useContext(AuthContext)
   return (
     <CardBackgroundPage>
-        <p>{id}</p>
+        <p>{user.id}</p>
     </CardBackgroundPage>
   )
 }
