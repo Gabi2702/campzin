@@ -4,7 +4,6 @@ import { AuthContext } from "../../context/auth";
 export default function UserHeaderProfile({ Profile }) {
   const { logoutUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(Profile)
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -12,7 +11,7 @@ export default function UserHeaderProfile({ Profile }) {
   return (
     <div className="relative inline-block text-left">
       <div className="flex items-center space-x-2">
-        <span>{Profile.user_metadata.name}</span>
+        <span>{Profile.user_metadata.full_name}</span>
         <img
           onClick={toggleDropdown}
           src={Profile.user_metadata.avatar_url}
