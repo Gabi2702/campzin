@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth";
+import { MdOutlineVerified } from "react-icons/md";
 
 export default function UserHeaderProfile({ Profile }) {
   const { logoutUser } = useContext(AuthContext);
@@ -10,16 +11,22 @@ export default function UserHeaderProfile({ Profile }) {
 
   return (
     <div className="relative inline-block text-left">
-      <div className="flex items-center space-x-2">
-        <span>{Profile.user_metadata.full_name}</span>
+     <div className="flex items-center space-x-2">
+      <p className="text-white">{Profile.user_metadata.full_name} </p>
+      <div className="relative">
         <img
           onClick={toggleDropdown}
           src={Profile.user_metadata.avatar_url}
           className="w-8 h-8 rounded-full cursor-pointer"
           alt="User avatar"
         />
+        <MdOutlineVerified 
+          className="absolute top-1 -right-2 transform translate-x-1/2 -translate-y-1/2"
+          color="grey"
+          size={16} 
+        />
       </div>
-
+    </div>
       {isOpen && (
         <div className="absolute z-10 right-0 mt-2 w-48 bg-primary-dark border border-primary-light rounded-lg shadow-lg">
           <ul className="py-1">
