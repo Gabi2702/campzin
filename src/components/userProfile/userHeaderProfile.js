@@ -23,7 +23,7 @@ export default function UserHeaderProfile({ Profile }) {
       {isOpen && (
         <div className="absolute z-10 right-0 mt-2 w-48 bg-primary-dark border border-primary-light rounded-lg shadow-lg">
           <ul className="py-1">
-            <li>
+            {/* <li>
               <a
                 href="#profile"
                 className="block px-4 py-2 text-white hover:bg-secondary-dark rounded-md"
@@ -38,7 +38,7 @@ export default function UserHeaderProfile({ Profile }) {
               >
                 Settings
               </a>
-            </li>
+            </li> */}
             <li>
               <button
                 onClick={logoutUser}
