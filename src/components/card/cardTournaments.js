@@ -10,7 +10,7 @@ export default function CardTournaments({ InfoTournament }) {
         <div className="flex w-full p-2">
           <img src={InfoTournament.image} alt={InfoTournament.name} className="w-[150px] h-[105px] object-cover rounded-md"/>
           <div className="ml-4">
-            <p className="font-semibold text-sm">{convertData(InfoTournament.date_init)} - {convertData(InfoTournament.date_end)}</p>
+            <p className="font-semibold text-sm">{convertData(InfoTournament.date_init)}</p>
             <h1 className="mt-4 font-semibold text-white">{InfoTournament.name}</h1>
             <div className="mt-4 flex flex-row gap-2 w-full">
               <CardInputInfoDisabled Info={InfoTournament.game_id.name}/>

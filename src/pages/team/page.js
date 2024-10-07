@@ -1,4 +1,3 @@
-import Card from "../../components/card/card";
 import CardBackgroundPage from "../../components/card/cardBackgroundPage";
 
 export default function TeamPage() {
