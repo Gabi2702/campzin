@@ -32,10 +32,8 @@ export default function FilterTournamentsByGame({onGameSelect}) {
   }
 
   return (
-    <CardBackgroundPage >
-      
+    <div className='flex p-4 mt-3'>
         <CardGames InfoGames={games} size={"sm"}/>
-      
-    </CardBackgroundPage>
+    </div>
   )
 }
