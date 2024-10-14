@@ -24,6 +24,10 @@ class TournamentService extends SupabaseService {
         return ['game_id.search_query', game]
     }
 
+    tournamentById(id){
+        return ['id',id]
+    }
+
     async getAllTournamentsNoParams(){
         return await this.selectAll(this.fieldsTournament())
     }
@@ -37,6 +41,10 @@ class TournamentService extends SupabaseService {
             return await this.getAllTournamentsByGame(game)
         }
         return await this.getAllTournamentsNoParams()
+    }
+
+    async getTournamentById(id){
+        return await this.selectSpecify(this.fieldsTournament(),this.tournamentById(id))
     }
 
 }
