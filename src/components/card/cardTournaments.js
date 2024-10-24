@@ -14,7 +14,7 @@ export default function CardTournaments({ InfoTournament }) {
             <h1 className="mt-4 font-semibold text-white">{InfoTournament.name}</h1>
             <div className="mt-4 flex flex-row gap-2 w-full">
               <CardInputInfoDisabled Info={InfoTournament.game_id.name}/>
-              <CardInputInfoDisabled Info={InfoTournament.platform_id.name}/>
+              <CardInputInfoDisabled Info={InfoTournament.plataform_id.name}/>
               <CardInputInfoDisabled Info={InfoTournament.type_tournament_id.name}/>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function CardTournaments({ InfoTournament }) {
         <div className="">
           <Card className={"w-[98%] bg-primary-light p-2 flex items-center"}>
             <div className="rounded-full w-12 h-12 bg-white mr-3"></div>
-            <TextLabelInfo Title={"Organizado Por"} Info={InfoTournament.creator} />
+            <TextLabelInfo Title={"Organizado Por"} Info={InfoTournament.creator_id.nickname} />
             <div className="ml-auto">
               <ButtonRedirect Title={"Competir"} urlRedirect={`/tournaments/${InfoTournament.id}`} />
             </div>

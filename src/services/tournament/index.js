@@ -8,13 +8,22 @@ class TournamentService extends SupabaseService {
 
     fieldsTournament(){
         return `* ,
-        platform_id (
+        plataform_id (
             name
         ),
-        type_tournament_id(
+        creator_id (
+            nickname
+        ),
+        type_tournament_id (
             name
         ),
-        game_id!inner(name)(
+        status_progress_id (
+            name
+        ),
+        time_checkin_id (
+            time
+        ),
+        game_id!inner(name) (
             name
         )
         `

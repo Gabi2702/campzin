@@ -1,9 +1,11 @@
+import { convertData } from "./maskFunctions";
+
 export function TimeOfTournament(targetDate) {
   const now = new Date();
   const target = new Date(targetDate);
   const diff = target - now;
 
-  if (diff <= 0) return "Campeonato iniciado.";
+  if (diff <= 0) return `Campeonato iniciado em ${convertData(targetDate)}`;
 
   const hours = Math.floor(diff / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
