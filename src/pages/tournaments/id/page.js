@@ -39,7 +39,7 @@ export default function TournamentByIdPage() {
   }
 
   return (
-    <div className="grid grid-cols-4 grid-rows-5 gap-3 mt-4 mb-4 px-12">
+    <div className="grid grid-cols-4 grid-rows-5 gap-2 mt-4 mb-4 px-12">
         <InfoTournamentCard tournament={tournamentById} />
         <StatusTournamentCard  tournament={tournamentById} />
         <TeamsTournamentCard  tournament={tournamentById}/>
@@ -47,7 +47,7 @@ export default function TournamentByIdPage() {
         <GameTournamentCard tournament={tournamentById}/>
         <CheckinTournamentCard  tournament={tournamentById} />
         <FormatTournamentCard tournament={tournamentById}/>
-        <TabItensTournamentCard   tournament={tournamentById}/>
+        <TabItensTournamentCard   tournament={tournamentById} />
     </div>
   )
 }

@@ -14,3 +14,28 @@ html, body {
 p {
     color: #AEAEAE;
 }
+
+/* Aplica o estilo do scrollbar globalmente */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Cor de fundo do trilho do scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #191919;
+    border-radius: 4px;
+  }
+  
+  /* Cor e estilo do "dedo" do scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #3333;
+    border-radius: 4px;
+    border: 2px solid #3333;
+  }
+  
+  /* Alteração de cor ao passar o mouse sobre o scrollbar */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #3333;
+  }
+  

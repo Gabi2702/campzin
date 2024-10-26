@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import CardFixed from '../../../components/card/cardFixed';
 import RoundsTournamentCard from './roundsTournamentCard';
-import RulesTournamentCard from './ruleTournamentCard';
 import KeyGroupTournament from './keyGroupTournament';
+import InformationsTournament from './informationTournament/informationTournament';
 
 export default function TabItensTournamentCard({tournament}) {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { label: "Regras", content: <RulesTournamentCard /> },
+    { label: "Informações", content: <InformationsTournament /> },
     { label: "Partidas", content: <RoundsTournamentCard /> },
     { label: "Chaveamento", content: <KeyGroupTournament /> },
   ];
